@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ფილმების ბაზა{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        nav {
+            display:flex;
+            justify-content:center;
+            gap:8px;
+            margin: 20px 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 18px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 15px;
+            margin: 0;
+        }
+        .btn:hover {
+            background: #1d4ed8;
+        }
+        main {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .film-list {
+            display: grid;
+            gap: 20px;
+        }
+        .film-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        .good-film {
+            border-left: 4px solid #27ae60;
+        }
+        .standard-film {
+            border-left: 4px solid #f39c12;
+        }
+        .rating {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .status {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .good {
+            background: #d4edda;
+            color: #155724;
+        }
+        .standard {
+            background: #fff3cd;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ჩემი ფილმების კოლექცია</h1>
+        </header>
+        
+        <nav>
+            <a href="/" class="btn">მთავარი</a>
+            <a href="/films/" class="btn">ფილმები</a>
+        </nav>
+        
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+</body>
+</html>

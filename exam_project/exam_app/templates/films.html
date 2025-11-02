@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}ჩემი ფილმები{% endblock %}
+
+{% block content %}
+<div class="films-page" style="max-width:720px;margin:0 auto;">
+    <h2 style="margin:8px 0 4px;">ჩემი საყვარელი ფილმები</h2>
+    <p style="color:var(--muted); margin:0 0 12px;">ქვემოთ ნაჩვენებია ჩემი საყვარელი ფილმების სია მათი IMDb რეიტინგებით:</p>
+
+    <div class="film-list" style="display:flex;flex-direction:column;gap:10px;">
+        {% for film in films %}
+        <div style="border:1px solid var(--border);border-radius:8px;padding:10px 12px;background:#fff;">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+                <h3 style="margin:0;font-size:16px;">{{ film.title }}</h3>
+                <span style="font-size:12px;color:var(--muted);">IMDb: {{ film.imdb }}/10</span>
+            </div>
+            <div style="margin-top:6px;">
+                {% if film.imdb >= 8 %}
+                    <span style="display:inline-block;padding:4px 8px;border-radius:999px;background:#e6f4ea;color:#166534;font-size:12px;">კარგი ფილმია</span>
+                {% else %}
+                    <span style="display:inline-block;padding:4px 8px;border-radius:999px;background:#f3f4f6;color:#374151;font-size:12px;">სტანდარტული ფილმია</span>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

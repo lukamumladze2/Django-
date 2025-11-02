@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}მთავარი{% endblock %}
+
+{% block content %}
+<style>
+/***** Home-only styles *****/
+.hero{
+  background: linear-gradient(135deg, #e0f2fe, #eef2ff);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  text-align: center;
+}
+.hero h2{margin:0 0 8px}
+.hero p{margin:0 0 6px;color:#4b5563}
+.actions{display:none}
+.actions .btn{display:none}
+.actions .btn:hover{display:none}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:16px}
+.card{border:1px solid #e5e7eb;border-radius:10px;padding:14px;background:#fff}
+.card h3{margin:0 0 6px;font-size:16px}
+.card p{margin:0;color:#6b7280;font-size:14px}
+</style>
+
+<div class="hero">
+    <h2>მოგესალმებით ფილმების ბაზაში!</h2>
+    <p>თქვენი პერსონალური ფილმების კოლექცია, მარტივი და სწრაფი.</p>
+        </div>
+{% endblock %}
